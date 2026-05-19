@@ -12,7 +12,7 @@ cask "jwm" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "jwm.app", target: "jWM.app"
 
@@ -26,9 +26,12 @@ cask "jwm" do
   ]
 
   caveats <<~EOS
-    jwm is distributed unsigned. On first launch macOS will block it.
-    Either right-click jWM in Applications and choose Open, or run:
-      xattr -dr com.apple.quarantine /Applications/jWM.app
+    jwm is distributed unsigned. On first launch macOS will block it. Either:
+
+      * open System Settings → Privacy & Security, scroll to the
+        "jWM was blocked" notice, and click "Open Anyway"; or
+      * remove the quarantine attribute manually:
+          xattr -dr com.apple.quarantine /Applications/jWM.app
 
     jwm needs Accessibility permission. Grant it in:
       System Settings → Privacy & Security → Accessibility

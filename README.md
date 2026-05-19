@@ -19,10 +19,10 @@ brew install --cask jwm
 
 jwm is distributed unsigned (no $99/yr Apple Developer Program). On first launch, macOS will refuse to open it.
 
-Either:
+Two ways past it:
 
-- right-click `jWM` in `/Applications` and choose **Open**, then confirm; or
-- remove the quarantine attribute:
+- **System Settings → Privacy & Security**, scroll to the "*jWM* was blocked..." notice and click **Open Anyway**, then confirm; or
+- remove the quarantine attribute from the bundle:
 
   ```bash
   xattr -dr com.apple.quarantine /Applications/jWM.app
