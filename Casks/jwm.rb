@@ -18,12 +18,17 @@ cask "jwm" do
 
   uninstall quit: "com.giovanniberi93.jwm"
 
-  zap trash: [
-    "~/Library/Application Support/com.giovanniberi93.jwm",
-    "~/Library/Caches/com.giovanniberi93.jwm",
-    "~/Library/HTTPStorages/com.giovanniberi93.jwm",
-    "~/Library/Preferences/com.giovanniberi93.jwm.plist",
-  ]
+  zap trash:  [
+        "~/Library/Application Support/jwm",
+        "~/Library/Caches/com.giovanniberi93.jwm",
+        "~/Library/HTTPStorages/com.giovanniberi93.jwm",
+        "~/Library/Preferences/com.giovanniberi93.jwm.plist",
+      ],
+      script: {
+        executable: "/bin/sh",
+        args:       ["-c", "defaults delete com.giovanniberi93.jwm 2>/dev/null; killall cfprefsd 2>/dev/null; true"],
+        sudo:       false,
+      }
 
   caveats <<~EOS
     jwm is distributed unsigned. On first launch macOS will block it. Either:
