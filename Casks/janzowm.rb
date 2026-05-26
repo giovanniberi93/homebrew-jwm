@@ -1,6 +1,6 @@
 cask "janzowm" do
-  version "0.2"
-  sha256 "0fc3bd214d2399f0fa66fce583a34fb89fff22a20c6d8af93f61c32864d44b3f"
+  version "0.3"
+  sha256 "09caeb48c1128d98ae4487ae5f7146e5b0480a359373b8997eec69fec17557ae"
 
   url "https://github.com/giovanniberi93/janzoWM/releases/download/v#{version}/janzoWM-#{version}.zip"
   name "janzoWM"
